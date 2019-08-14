@@ -1,0 +1,20 @@
+
+
+npm install --save-dev @babel/core @babel/cli @babel/preset-react @babel/preset-env
+
+.babelrc
+
+
+{
+
+  "presets": [
+        "@babel/env",
+        "@babel/preset-react"
+    ]
+
+}
+
+in "scripts" di package.json ( si crea con npm init )
+"build": "npx babel jsx --out-dir js"
+
+npm run build

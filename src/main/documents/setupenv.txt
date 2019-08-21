@@ -15,6 +15,7 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-react @babel/preset-
 }
 
 in "scripts" di package.json ( si crea con npm init )
-"build": "npx babel jsx --out-dir js"
+"build": "npx babel jsx --watch --out-dir js --verbose"
 
 npm run build
+

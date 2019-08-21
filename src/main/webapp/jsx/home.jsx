@@ -1,9 +1,10 @@
-class Card extends React.Component {
+class Carda extends React.Component {
+
 
   constructor(props) {
     super(props);
   }
-
+  
   listaPolizze() {
     
     var polizzelist = this.props.polizze.split(';');
@@ -36,21 +37,23 @@ class Card extends React.Component {
 }
 
 class Home extends React.Component {
-    render() {
-      return (
-        <div class="card-deck">
-          <Card 
-            title="Polizze Recenti"
-            polizze="12345678;987654321;88888888"
-            footer="Ultimo aggiornamento 12/12/2018">
+  render() {
+    return (
+      <div class="card-deck">
+        <Carda 
+          title="Polizze Recenti"
+          polizze="12345678;987654321;88888888;99999999;1111111;2222222;333333"
+          footer="Ultimo aggiornamento 12/08/2019">
 
-          </Card>
-        </div>
-      );
-    }
+        </Carda>
+      </div>
+    );
   }
+}
 
-    // ========================================
+
+
+// ========================================
 
 ReactDOM.render(
     <Home />,

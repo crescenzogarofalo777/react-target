@@ -23,16 +23,16 @@ $(document).ready(function(){
 			var idTarget = data.currentTarget.id;
 			if(idTarget == "gameLink") {
 				$("#container").load("includes/game.html");
-			} else if (idTarget == "activeLink") {
+			} /*else if (idTarget == "activeLink") {
 				
 //				person.hello("world");
 				pippo();
-			} else {
-				$("#container").load("includes/home.html");
+			} */else {
+				$("#container").load("includes/dashboard.html");
 			}
 		}
 	);
-	$("#container").load("includes/home.html");
+	$("#container").load("includes/dashboard.html");
 });
 
  

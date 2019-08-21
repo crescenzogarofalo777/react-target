@@ -18,83 +18,74 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-var Carda =
+var Card =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(Carda, _React$Component);
+  _inherits(Card, _React$Component);
 
-  function Carda(props) {
-    _classCallCheck(this, Carda);
+  function Card(props) {
+    var _this;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Carda).call(this, props));
+    _classCallCheck(this, Card);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Card).call(this, props));
+    _this.caption = "";
+    _this.captionIcon = "";
+    _this.width = "12";
+    return _this;
   }
 
-  _createClass(Carda, [{
-    key: "listaPolizze",
-    value: function listaPolizze() {
-      var polizzelist = this.props.polizze.split(';');
-      var res = [];
-
-      if (polizzelist.length > 0) {
-        for (var ii = 0; ii < polizzelist.length; ii++) {
-          res.push(React.createElement("p", {
-            "class": "card-text"
-          }, polizzelist[ii]));
-        }
-      } else {
-        res.push(React.createElement("p", {
-          "class": "card-text"
-        }, "Nessuna polizza da mostrare"));
-      }
-
-      return res;
-    }
-  }, {
+  _createClass(Card, [{
     key: "render",
     value: function render() {
       return React.createElement("div", {
-        "class": "card"
+        "class": "col-lg-" + this.props.width + " thumbnail"
       }, React.createElement("div", {
-        "class": "card-body"
-      }, React.createElement("h5", {
-        "class": "card-title"
-      }, this.props.title), this.listaPolizze()), React.createElement("div", {
-        "class": "card-footer"
-      }, React.createElement("small", {
-        "class": "text-muted"
-      }, this.props.footer)));
+        "class": "caption"
+      }, React.createElement("div", {
+        "class": "col-lg-12"
+      }, React.createElement("span", {
+        "class": "glyphicon " + this.props.captionIcon
+      }), React.createElement("span", {
+        "class": "margin-left-5 text-primary"
+      }, this.props.caption))));
     }
   }]);
 
-  return Carda;
+  return Card;
 }(React.Component);
 
-var Home =
+var Dashboard =
 /*#__PURE__*/
 function (_React$Component2) {
-  _inherits(Home, _React$Component2);
+  _inherits(Dashboard, _React$Component2);
 
-  function Home() {
-    _classCallCheck(this, Home);
+  function Dashboard() {
+    _classCallCheck(this, Dashboard);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(Home).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(Dashboard).apply(this, arguments));
   }
 
-  _createClass(Home, [{
+  _createClass(Dashboard, [{
     key: "render",
     value: function render() {
       return React.createElement("div", {
-        "class": "card-deck"
-      }, React.createElement(Carda, {
-        title: "Polizze Recenti",
-        polizze: "12345678;987654321;88888888;99999999;1111111;2222222;333333",
-        footer: "Ultimo aggiornamento 12/08/2019"
-      }));
+        "class": "row"
+      }, React.createElement("div", {
+        "class": "col-xs-12"
+      }, React.createElement(Card, {
+        width: "8",
+        captionIcon: "glyphicon-search",
+        caption: "Ricerca Soggetto"
+      }), React.createElement(Card, {
+        width: "4",
+        captionIcon: "glyphicon-th-list",
+        caption: "Elenco Report"
+      })));
     }
   }]);
 
-  return Home;
-}(React.Component); // ========================================
+  return Dashboard;
+}(React.Component);
 
-
-ReactDOM.render(React.createElement(Home, null), document.getElementById('idHome'));
+ReactDOM.render(React.createElement(Dashboard, null), document.getElementById('idDashboard'));
